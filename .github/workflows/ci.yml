@@ -10,11 +10,11 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Compose up
-        run: make up
+        run: docker compose -f 05_Replica/infra/docker-compose.yml up -d
 
       - name: Run smoke tests
-        run: make test
+        run: bash 05_Replica/tests/smoke_test.sh
 
       - name: Compose down
         if: always()
-        run: make down
+        run: docker compose -f 05_Replica/infra/docker-compose.yml down
