@@ -8,10 +8,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+
       - name: Compose up
-        run: docker compose -f 05_Replica/infra/docker-compose.yml up -d
+        run: make up
+
       - name: Run smoke tests
-        run: make -C 05_Replica test
+        run: make test
+
       - name: Compose down
         if: always()
-        run: docker compose -f 05_Replica/infra/docker-compose.yml down
+        run: make down
