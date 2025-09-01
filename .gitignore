@@ -1,0 +1,14 @@
+__pycache__/
+*.pyc
+.venv/
+.env
+node_modules/
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.zip
+*.tar.gz
+dist/
+build/
+**/.env.docker
